@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         EditText Learn = (EditText) findViewById(R.id.learnKoef);
         EditText Count = (EditText) findViewById(R.id.countNumber);
         TextView resultText = (TextView) findViewById(R.id.resultText);
+        TextView timeTook = (TextView) findViewById(R.id.timeTook);
 
         if (XA.getText().toString().trim().equals("")
                 || YA.getText().toString().trim().equals("")
@@ -102,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 + "  W1 = " + String.format("%.3g%n", w1d)
                 + "  W2 = " + String.format("%.3g%n", w2d)
                 + "Витрачено часу: " + time);
+
+        end = System.nanoTime();
+        time = end - start;
+        timeTook.setText("Витрачено часу: " + time);
     }
     public void Clear(View v) {
         EditText XA = (EditText) findViewById(R.id.Xa);
